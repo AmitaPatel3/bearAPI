@@ -11,14 +11,12 @@ var winnie ={name: 'pooh', id: 3, age: 100, gender: 'male'}
 var bears = [monte, paul, winnie];
 
 //create our first API new point
-app.get('/api/bears', function (req, res) {
-	res.json(bears)	
-}); //read a bunch of stuff
+ //read a bunch of stuff
 
 //localhost: 3000/api/bear/45432
 app.get('/api/bear/:id', function (req, res) {
 
-	var thisbear = {title: "no bear with this id"};
+	var thisbear = " ";
 	var id = req.params.id;
 
 	bears.forEach(function(lookingbear) {
@@ -33,8 +31,25 @@ app.get('/api/bear/:id', function (req, res) {
 
 });
 
-app.delete('/api/bear/:id', function (req, res)) {
+app.delete('/api/bear/:id', function (req, res) {
+	var id = req.params.id;
+	
+	var thisbear = '';
+	var index = '';
 
+	console.log(id);
+
+	bears.forEach(function(deletebear) {
+
+		if (deletebear.id.toString() === id.toString()) {
+
+			thisbear = deletebear;
+			index = bears.indexOf(thisbear);
+
+		}
+		
+	})
+	res.json(bears.splice(index, 1))
 
 }) //need to find that index and use splice
 
