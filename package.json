@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AmitaPatel3/bearAPI/issues"
   },
-  "homepage": "https://github.com/AmitaPatel3/bearAPI#readme"
+  "homepage": "https://github.com/AmitaPatel3/bearAPI#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
