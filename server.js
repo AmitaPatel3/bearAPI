@@ -18,13 +18,13 @@ app.get('/api/bears', function (req, res) {
 //localhost: 3000/api/bear/45432
 app.get('/api/bear/:id', function (req, res) {
 
-	var thisbear = " "
+	var thisbear = {title: "no bear with this id"};
 	var id = req.params.id;
 
 	bears.forEach(function(lookingbear) {
 		if (lookingbear.id.toString() === id.toString()) {
 
-			thisbear = lookingbear
+			thisbear = lookingbear //have to define lookingbear
 		}
 
 	});
@@ -33,6 +33,10 @@ app.get('/api/bear/:id', function (req, res) {
 
 });
 
+app.delete('/api/bear/:id', function (req, res)) {
+
+
+}) //need to find that index and use splice
 
 app.post('/api/bear',function(req,res) {
 	var newBear = {};
