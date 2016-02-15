@@ -1,9 +1,15 @@
 var express = require('express');
 var app = express();
 
+var monte = {name: 'monte', id: 1, age: 100, gender: 'male'}
+var paul = {name: 'paul', id: 2, age: 101, gender: 'male'}
+var winnie ={name: 'pooh', id: 3, age: 100, gender: 'male'}
+
+var bears = [monte, paul, winnie];
+
 //create our first API new point
 app.get('/api/bears', function (req, res) {
-	res.json({title: 'does it work?', body: 'I hope so..'})
+	res.json(bears)	
 }); //read a bunch of stuff
 
 
